@@ -29,7 +29,7 @@ class Database {
             ]);
         } catch (PDOException $e) {
             error_log("Database connection failed: " . $e->getMessage());
-            throw new Exception("Database connection failed");
+            throw new Exception("Database connection failed: " . $e->getMessage());
         }
         
         return self::$instance;
