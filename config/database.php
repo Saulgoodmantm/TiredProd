@@ -3,6 +3,11 @@
  * Database Configuration
  */
 
+// Ensure env() function is available
+if (!function_exists('env')) {
+    require_once __DIR__ . '/app.php';
+}
+
 return [
     'connection' => env('DB_CONNECTION', 'pgsql'),
     'host' => env('DB_HOST'),
